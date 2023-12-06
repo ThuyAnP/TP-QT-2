@@ -14,11 +14,22 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_BtnSauvegarder_clicked()
 {
-    if (Code)
+    ui->DernierCodeSaisi->setText(ui->Code->text());
+
+    if( )
     {
-        ui->DernierCodeSaisi->setText(Code);
+        QMessageBox msgBox;
+        msgBox.setText("Saisir du code.");
+        msgBox.setInformativeText("Vous devez saisir un code!!");
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        int ret = msgBox.exec();
+        // On vérifie si l'utilisateur a cliqué sur Ok
+
+        if ( ret == QMessageBox::Ok ) {
+        // traitement à exécuter
+    }
+
     }
 }
